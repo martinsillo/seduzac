@@ -1,0 +1,1 @@
+<p>Logo LABSOL</p>
