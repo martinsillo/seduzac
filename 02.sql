@@ -30,7 +30,7 @@ begin
 end $$
 delimiter ;
 
-delimiter;
+delimiter $$
 create procedure listaEmpleados(in c int)
 begin
 SELECT  
@@ -45,4 +45,4 @@ FROM empleados e
 inner join puestos p on(e.puesto = p.id)
  WHERE e.cct = c;
  end $$
- delimiter ;
+delimiter ;
