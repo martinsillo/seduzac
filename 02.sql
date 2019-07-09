@@ -30,6 +30,7 @@ begin
 end $$
 delimiter ;
 
+delimiter;
 create procedure listaEmpleados(in c int)
 begin
 SELECT  
