@@ -1,3 +1,4 @@
+
 USE `encuestas_seduzac`;
 INSERT INTO `empleados` (`rfc`, `num_empleado`, `nombre`, `puesto`, `tipo_contrato`, `categoria`, `cve_fed`,`cct`) VALUES
 ('AALA761031BP0','453500','ALMARAZ DE LEON ANA GABRIELA',1,1,2,'A03804',1),
