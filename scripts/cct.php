@@ -1,7 +1,6 @@
 <?php
 if(strlen($_POST['cct']) > 8){
-error_reporting(E_ALL);
-ini_set('display_errors',1);
+ini_set('display_errors',0);
 require_once('constantes.php');
 $conn = new mysqli(HOST, 'seduzac_con', 'F2AE9469B26199657C279E55B1747',DATABASE);
 $queryCCT = "SELECT id,nombre FROM centros_trabajo WHERE cct = '".$_POST['cct']."'";
