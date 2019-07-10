@@ -1,21 +1,13 @@
 <h4>Cuestionario</h4>
 <p>1. Su clave de trabajo corresponde con la funcion que realiza?</p>
-<div class="row">
-    <div class="col s1">
-        <label>
-            <input name="q1" type="radio" id="q1_1"/>
-            <span>Si</span>
-        </label>
-    </div>
-    <div class="col s1">
-        <label>
-            <input name="q1" type="radio" id="q1_2"/>
-            <span>No</span>
-        </label>
-    </div>
-    <div class="col s5"></div>
-    <div class="col s5"></div>
-</div>
+ <div class="switch">
+    <label>
+    No
+      <input type="checkbox" id="q1">
+      <span class="lever"></span>
+    Si
+    </label>
+  </div>
 <hr>
 <p>2. Con que servicios cuenta este centro laboral </p>
 <div class="row">
@@ -77,7 +69,7 @@
             </label>
 		</p>
           <p>
-            <input id="email_inline" type="email" class="validate" name="q10_otro">
+            <input id="email_inline" type="email" class="validate" name="q2_10">
             <label for="q10_otro">Otro</label>  
           </p>
         
@@ -217,15 +209,46 @@
     Si
     </label>
   </div>
-<div class="row">
-    <div class="col s12" id="imgTrabajador"></div>
-</div>
+
 
 8.- ¿Que tan frecuente es su asistencia?
-----
+<div class="row">
+<div class="col s3">
+      <p>
+      <label>
+        <input name="group2" type="radio"  />
+        <span>Casi siempre (más del 90%)</span>
+      </label>
+    </p>
+</div>
+<div class="col s3">
+      <p>
+      <label>
+        <input name="group2" type="radio"  />
+        <span>Es muy irregular, a veces si y aveces no (entre 50% y 90% )</span>
+      </label>
+    </p>
+</div>
+<div class="col s3">
+      <p>
+      <label>
+        <input name="group2" type="radio"  />
+        <span> Casi no viene (menos del 50%) </span>
+      </label>
+    </p>
+</div>
+<div class="col s3">
+      <p>
+      <label>
+        <input name="group2" type="radio" />
+        <span> No lo conocemos, nunca lo hemos visto </span>
+      </label>
+    </p>
+</div>    
+</div>
 
 
-7.- Cumple con el horario establecido
+9.- Cumple con el horario establecido
 
  <div class="switch">
     <label>
@@ -235,13 +258,13 @@
     Si
     </label>
   </div>
-<div class="row">
-    <div class="col s12" id="imgTrabajador"></div>
-</div>
 
 
-8.- Desde cuando se acuerda que trabaja aqui?
 
+10.- Desde cuando se acuerda que trabaja aqui?
+ <div class="input-field inline">
+            <input id="email_inline" type="date" class="validate">
+          </div>
 
 
 

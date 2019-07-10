@@ -4,7 +4,7 @@ if($_SESSION["logged"] == 0){
     header('location: index.php');
 }
 require_once('scripts/constantes.php');   
-$conn = new mysqli(HOST, 'seduzac_consultas', 'F2AE9469B26199657C279E55B1747',DATABASE);
+$conn = new mysqli(HOST, 'seduzac_con', 'F2AE9469B26199657C279E55B1747',DATABASE);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -79,11 +79,11 @@ $conn = new mysqli(HOST, 'seduzac_consultas', 'F2AE9469B26199657C279E55B1747',DA
   <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content" id="contenidoModal">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>--</h4>
+      <p>--</p>
     </div>
     <div class="modal-footer" id="footerModal">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">--</a>
     </div>
   </div>
 	
@@ -120,6 +120,6 @@ $(document).ready(function(){
      
      	
 </script>	
- <script type="application/javascript" src="js/main.js?v1.9.11"></script>    
+ <script type="application/javascript" src="js/main.js?v2.0.4"></script>    
   </body>
 </html>

@@ -1,4 +1,4 @@
-USE `seduzac_encuestas`;
+USE `encuestas_seduzac`;
 INSERT INTO `regiones` (`region`) VALUES ('Región 0');
 INSERT INTO `regiones` (`region`) VALUES ('Región 1');
 INSERT INTO `regiones` (`region`) VALUES ('Región 2');

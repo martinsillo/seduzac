@@ -1,5 +1,5 @@
-CREATE SCHEMA `seduzac_encuestas_test` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `seduzac_encuestas_test`;
+CREATE SCHEMA `encuestas_seduzac` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `encuestas_seduzac`;
 
 
 CREATE TABLE `configuracion` (

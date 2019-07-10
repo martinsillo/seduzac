@@ -1,4 +1,4 @@
-USE `seduzac_encuestas`;
+USE `encuestas_seduzac`;
 delimiter $$
 CREATE PROCEDURE revisarConfiguracion()
 begin

@@ -68,7 +68,7 @@ function evaluar(accion) {
 	
 	if(accion == "s"){
 	 $('#contenidoModal').load('views/cuestionario.php');
-	 document.getElementById('footerModal').innerHTML="<a href='javascript:evaluar(\"s\")' class='modal-close waves-effect waves-green btn-flat'>Si</a><a href='\"n\"' class='modal-close waves-effect waves-green btn-flat'>No</a>";
+	 document.getElementById('footerModal').innerHTML="<a href='javascript:guardarEvaluacion()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat ' style='color:red;'>Cancelar</a>";
      $('#modal1').modal('open');
 	}
 	
@@ -97,3 +97,20 @@ function _getUserMedia() {
 }
 
 
+function guardarEvaluacion(){
+    
+    //revisamos los campos
+    
+    if( $('#q1').prop('checked')) {
+        var q1 = 1;
+    }else{
+        var q1 = 0;
+    }
+    
+    
+    
+    
+    
+    console.log(q1);
+    return false;
+}
