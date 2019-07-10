@@ -107,9 +107,49 @@ function guardarEvaluacion(){
         var q1 = 0;
     }
     
+    // question 2 ---------
+    var q2 = "";
+    if( $('#q2_1').prop('checked')) {
+        var q2 = q2 + "1";
+    }
+    if( $('#q2_2').prop('checked')) {
+        var q2 = q2 + "2";
+    }
+    if( $('#q2_3').prop('checked')) {
+        var q2 = q2 + "3";
+    }
+    if( $('#q2_4').prop('checked')) {
+        var q2 = q2 + "4";
+    }
+    if( $('#q2_5').prop('checked')) {
+        var q2 = q2 + "5";
+    }
+    if( $('#q2_6').prop('checked')) {
+        var q2 = q2 + "6";
+    }
+    if( $('#q2_7').prop('checked')) {
+        var q2 = q2 + "7";
+    }
+    if( $('#q2_8').prop('checked')) {
+        var q2 = q2 + "8";
+    }
+    if( $('#q2_9').prop('checked')) {
+        var q2 = q2 + "9";
+    }
     
+    var q2_10 = $('#q2_10').val();
+    var q3 = $('#q3').val();
     
+    // question 4 ---------
     
+    var q4 = $('input:radio[name=edad]:checked').val(); // todos mismo nombre, diferente id y valor
+    
+    // question 8
+     var q8 = $('input:radio[name=edad]:checked').val(); // todos mismo nombre, diferente id y valor
+    
+    //question 9
+    var q9 = "";
+    var q10 = ""
     
     console.log(q1);
     return false;
