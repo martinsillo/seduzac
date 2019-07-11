@@ -1,83 +1,89 @@
+DROP SCHEMA `encuestas_seduzac`;
 CREATE SCHEMA `encuestas_seduzac` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `encuestas_seduzac`;
 
+CREATE TABLE `categorias` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `centros_trabajo` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `cct` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(254) COLLATE utf8_unicode_ci NOT NULL,
+  `region` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1478 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `configuracion` (
-  `id` TINYINT NOT NULL AUTO_INCREMENT,
-  `tablet_num` VARCHAR(32) NOT NULL,
-  `usuario` VARCHAR(16) NOT NULL,
-  `clave` VARCHAR(32) NOT NULL,
-  `nombre` VARCHAR(128) NOT NULL,
-  `email` VARCHAR(128) NOT NULL,
-  `telefono` VARCHAR(10) NOT NULL,
-   `registrado_web` TINYINT(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`));
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `tablet_num` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `usuario` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `clave` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `registrado_web` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `contratos` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo_contrato` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `empleados` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `rfc` varchar(13) COLLATE utf8_unicode_ci NOT NULL,
+  `num_empleado` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nombre` varchar(254) COLLATE utf8_unicode_ci NOT NULL,
+  `puesto` smallint(5) unsigned NOT NULL,
+  `tipo_contrato` smallint(5) unsigned NOT NULL,
+  `categoria` smallint(5) unsigned NOT NULL,
+  `cve_fed` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cct` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `encuestas` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `folio` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha` datetime NOT NULL,
+  `encuestador` varchar(48) COLLATE utf8_unicode_ci NOT NULL,
+  `empleado` smallint(5) unsigned NOT NULL,
+  `q1` tinyint(1) unsigned NOT NULL,
+  `q2` varchar(9) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `q2_10` text COLLATE utf8_unicode_ci NOT NULL,
+  `q3` date NOT NULL,
+  `q4` tinyint(3) unsigned DEFAULT NULL,
+  `q4_12` text COLLATE utf8_unicode_ci,
+  `ineFront` mediumtext COLLATE utf8_unicode_ci,
+  `ineBack` mediumtext COLLATE utf8_unicode_ci,
+  `empleadoFoto` mediumtext COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `puestos` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `puesto` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `regiones` (
-  `id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `region` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`));
-  
- CREATE TABLE `centros_trabajo` (
-  `id` SMALLINT NOT NULL AUTO_INCREMENT,	  
-  `cct` VARCHAR(16) NOT NULL,
-  `nombre` VARCHAR(254) NOT NULL,
-  `region` TINYINT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`));
-  
-    CREATE TABLE `puestos` (
-  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `puesto` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`));
-  
-
-   CREATE TABLE `contratos` (
-  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `tipo_contrato` VARCHAR(32) NOT NULL,
-  PRIMARY KEY (`id`));
-  
-  CREATE TABLE `categorias` (
-  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `categoria` VARCHAR(32) NOT NULL,
-  PRIMARY KEY (`id`));
-  
-    CREATE TABLE `empleados` (
-  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `rfc` VARCHAR(13) NOT NULL,
-  `num_empleado` VARCHAR(45) NULL,
-  `nombre` VARCHAR(254) NOT NULL,
-  `puesto` SMALLINT UNSIGNED NOT NULL,
-  `tipo_contrato` SMALLINT UNSIGNED NOT NULL,
-  `categoria` SMALLINT UNSIGNED NOT NULL,
-  `cve_fed` VARCHAR(45) NULL,
-  `cct` SMALLINT NOT NULL,
-  PRIMARY KEY (`id`));
-  
-    CREATE TABLE `encuestas` (
-  `id` smallint NOT NULL auto_increment,
-  `folio` varchar(45) not null,
-  `fecha` datetime not null,
-  `encuestador` varchar(48) not null,
-  `empleado` smallint unsigned not null,
-  `q1` tinyint(1) unsigned not null,
-  `q2` varchar(9) DEFAULT NULL,
-  `q2_10` text default null,		
-  `q3` DATE NOT NULL,
-  `q4` Tinyint default NULL,
-  `q4_12` text default null
-  `ineFront` MEDIUMTEXT,
-  `ineBack` MEDIUMTEXT,
-  `empleadoFoto` MEDIUMTEXT,
+  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `region` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `testigos` (
-	`id` smallint not null auto_increment,
-	`id_empleado` smallint not null,
-	`fecha` datetime not null,
-	`q1` tinyint(1) default null,
-	`q2` tinyint default null,
-	`q3` tinyint default null,
-	`q4` date default null,
-	PRIMARY KEY(`id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `id_empleado` smallint(6) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `q1` tinyint(1) DEFAULT NULL,
+  `q2` tinyint(4) DEFAULT NULL,
+  `q3` tinyint(4) DEFAULT NULL,
+  `q4` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
