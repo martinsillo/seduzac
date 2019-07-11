@@ -1,13 +1,13 @@
 <?php
-
+session_start();
 // guardamos si se entrevisto al empleado
 if( $_POST['entrevistado'] == 'si'){
 	
 	
 	$folio = 'text';
 	$fecha = date("Y-m-d H:i:s");
-	$encuestador = 'claveEncuestador';
-	$empleado = 1;
+	$encuestador = $_SESSION['nombre'];
+	
 	$query = "INSERT INTO encuestas (
 	folio,
 	fecha,
@@ -26,7 +26,7 @@ if( $_POST['entrevistado'] == 'si'){
 	'".$folio."',
 	'".$fecha."',
 	'".$encuestador."',
-	$empleado,
+	".$_POST['idEmpleado'].",
 	".$_POST['q1'].",
 	'".$_POST['q2']."',
 	'".$_POST['q2_10']."',

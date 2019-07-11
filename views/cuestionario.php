@@ -1,4 +1,6 @@
 <h4>Cuestionario</h4>
+
+<input type='hidden' id="idEmpleado" value="<?php echo $_GET['id']; ?>">
 <p>1. Su clave de trabajo corresponde con la funcion que realiza?</p>
  <div class="switch">
     <label>

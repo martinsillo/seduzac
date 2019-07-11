@@ -34,10 +34,10 @@ function cargaInfoCCT() {
 
 					if (obj[2][x][5] == 1) {
 						encuestado = "<span style='color:#aeea00;'><i class='fa fa-check-circle' aria-hidden='true'></i></span>";
-						evaluarbtn = "<a href='javascript:evaluar(\"u\");' class='waves-effect waves-light btn-small blue lighten-5 '>Actualizar</a>";
+						evaluarbtn = "<a href='javascript:evaluar(\"u\","+obj[2][x][0]+");' class='waves-effect waves-light btn-small blue lighten-5 '>Actualizar</a>";
 					} else {
 						encuestado = "<span style='color:#ff3d00;'><i class='fa fa-ban' aria-hidden='true'></i></span>";
-						evaluarbtn = "<a href='javascript:evaluar(\"q\");' class='waves-effect waves-light btn-small lime accent-2' style='color:#333;'>Evaluar</a>";
+						evaluarbtn = "<a href='javascript:evaluar(\"q\","+obj[2][x][0]+");' class='waves-effect waves-light btn-small lime accent-2' style='color:#333;'>Evaluar</a>";
 					}
 					cel1.innerHTML = obj[2][x][2];
 					cel2.innerHTML = obj[2][x][1];
@@ -52,22 +52,28 @@ function cargaInfoCCT() {
 		});
 }
 
-function evaluar(accion) {
+function evaluar(accion,id) {
 	'use strict';
 	if(accion == "q"){
-	 $('#contenidoModal').load('views/presentacion.php');
-	 document.getElementById('footerModal').innerHTML="<a href='javascript:evaluar(\"s\")' class='modal-close waves-effect waves-green btn-flat'>Si</a><a href='javascript:evaluar(\"n\")' class='modal-close waves-effect waves-green btn-flat'>No</a>";
+	 $('#contenidoModal').load('views/presentacion.php?id='+id);
+	 document.getElementById('footerModal').innerHTML="<a href='javascript:evaluar(\"s\","+id+")' class='modal-close waves-effect waves-green btn-flat'>Si</a><a href='javascript:evaluar(\"n\")' class='modal-close waves-effect waves-green btn-flat'>No</a>";
      $('#modal1').modal('open');
 	}
 	
 	if(accion == "n"){
-	 $('#contenidoModal').load('views/no_encuesta.php');
-	 document.getElementById('footerModal').innerHTML="<a href='javascript:evaluar(\"s\")' class='modal-close waves-effect waves-green btn-flat'>Continuar Evaluación</a><a href='\"nn\"' class='modal-close waves-effect waves-green btn-flat' style='color:red;'>Guardar No evaluado</a>";
+	 $('#contenidoModal').load('views/no_encuesta.php?id='+id);
+	 document.getElementById('footerModal').innerHTML="<a href='javascript:evaluar(\"s\","+id+")' class='modal-close waves-effect waves-green btn-flat'>Continuar Evaluación</a><a href='\"nn\"' class='modal-close waves-effect waves-green btn-flat' style='color:red;'>Guardar No evaluado</a>";
      $('#modal1').modal('open');
 	}
 	
 	if(accion == "s"){
-	 $('#contenidoModal').load('views/cuestionario.php');
+	 $('#contenidoModal').load('views/cuestionario.php?id='+id);
+	 document.getElementById('footerModal').innerHTML="<a href='javascript:guardarEvaluacion()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat ' style='color:red;'>Cancelar</a>";
+     $('#modal1').modal('open');
+	}
+	
+	if(accion == "u"){
+	 $('#contenidoModal').load('views/actualizar.php?id='+id);
 	 document.getElementById('footerModal').innerHTML="<a href='javascript:guardarEvaluacion()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat ' style='color:red;'>Cancelar</a>";
      $('#modal1').modal('open');
 	}
@@ -148,6 +154,7 @@ function guardarEvaluacion(){
 		url: "scripts/guardarEvaluacion.php",
 		data: {
 			entrevistado:'si',
+			idEmpleado:$('#idEmpleado').val(),
 			q1:q1,
 			q2:q2,
 			q2_10:q2_10,
@@ -161,7 +168,7 @@ function guardarEvaluacion(){
 	})
 		.done(function (msg) {
             alert(msg);
-		    location.reload();
+		    cargaInfoCCT();
 		});
 	
 	
