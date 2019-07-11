@@ -120,6 +120,6 @@ $(document).ready(function(){
      
      	
 </script>	
- <script type="application/javascript" src="js/main.js?v2.0.4"></script>    
+ <script type="application/javascript" src="js/main.js?v2.1.4"></script>    
   </body>
 </html>

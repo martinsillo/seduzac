@@ -139,18 +139,31 @@ function guardarEvaluacion(){
     
     var q2_10 = $('#q2_10').val();
     var q3 = $('#q3').val();
+    var q4 = $('input:radio[name=q4]:checked').val(); // todos mismo nombre, diferente id y valor
+    var q4_12 = $('#q4_12').val();
     
-    // question 4 ---------
     
-    var q4 = $('input:radio[name=edad]:checked').val(); // todos mismo nombre, diferente id y valor
-    
-    // question 8
-     var q8 = $('input:radio[name=edad]:checked').val(); // todos mismo nombre, diferente id y valor
-    
-    //question 9
-    var q9 = "";
-    var q10 = ""
-    
-    console.log(q1);
+	$.ajax({
+		method: "POST",
+		url: "scripts/guardarEvaluacion.php",
+		data: {
+			entrevistado:'si',
+			q1:q1,
+			q2:q2,
+			q2_10:q2_10,
+			q3:q3,
+			q4:q4,
+			q4_12:q4_12,
+			ineFront:fotos[0],
+			ineBack:fotos[1],
+			empleadoFoto:fotos[2]
+		}
+	})
+		.done(function (msg) {
+            alert(msg);
+		    location.reload();
+		});
+	
+	
     return false;
 }

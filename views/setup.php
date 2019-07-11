@@ -47,8 +47,8 @@ El sistema aún no se ha inicializado, por favor llena los siguientes campos par
         </div>
       </div>
     <div style="text-align:left;">
-    <button class="btn waves-effect waves-light #f4511e deep-orange darken-1" type="submit" name="action">Continuar
-    <i class="material-icons right">send</i>
+    <button class="btn waves-effect waves-light #f4511e deep-orange darken-1" type="submit" name="action">Continuar&nbsp;
+    <i class="fa fa-sign-in" aria-hidden="true"></i>
         
   </button>
         </div>

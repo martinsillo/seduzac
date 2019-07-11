@@ -69,8 +69,8 @@
             </label>
 		</p>
           <p>
-            <input id="email_inline" type="email" class="validate" name="q2_10">
-            <label for="q10_otro">Otro</label>  
+            <input  type="email" class="validate" name="q2_10" id='q2_10'>
+            <label for="q2_10">Otro</label>  
           </p>
         
     </div>
@@ -80,7 +80,7 @@
         <div class="col s12">
           3. ¿En que fecha comenzó usted, por primera vez a trabajar en la Secretaria de Eduación?: 
           <div class="input-field inline">
-            <input id="email_inline" type="date" class="validate">
+            <input  type="date" class="validate" id='q3'>
           </div>
         </div>
       </div>
@@ -89,25 +89,25 @@
 <div class="col s4">
       <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="1" id="q4_1" />
         <span>Aulas</span>
       </label>
     </p>
       <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="2" id="q4_2" />
         <span>Baños</span>
       </label>
     </p>
       <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="3" id="q4_3" />
         <span>Cerco Perimetral</span>
       </label>
     </p>
       <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="4" id="q4_4" />
         <span>Cómputo</span>
       </label>
     </p>
@@ -115,28 +115,28 @@
 <div class="col s4">
       <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="5" id="q4_5" />
         <span>Domo</span>
       </label>
     </p>
      
 	<p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="6"  id="q4_6" />
         <span>Impermeabilización</span>
       </label>
     </p>
      
 	<p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="7" id="q4_7" />
         <span>Internet</span>
       </label>
     </p>
      
 	<p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="8" id="q4_8" />
         <span>Más Personal</span>
       </label>
     </p>
@@ -146,26 +146,26 @@
 	
 	<p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="9" id="q4_9" />
         <span>Mobiliario</span>
       </label>
     </p>
     
 	<p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="10" id="q4_10" />
         <span>Pintura y Acabados</span>
       </label>
     </p>
 <p>
       <label>
-        <input name="group1" type="radio" checked />
+        <input name="q4" type="radio" value="11" id="q4_11" />
         <span>Rampas</span>
       </label>
     </p>
   <p>
-            <input id="email_inline" type="email" class="validate" name="q10_otro">
-            <label for="q10_otro">Otro</label>  
+            <input id="q4_12" type="text" class="validate" name="q4_12">
+            <label for="q4_12">Otro</label>  
           </p>
   
 	</div>	

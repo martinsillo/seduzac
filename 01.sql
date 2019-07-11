@@ -54,18 +54,30 @@ CREATE TABLE `regiones` (
   PRIMARY KEY (`id`));
   
     CREATE TABLE `encuestas` (
-  `id` int(11) NOT NULL,
+  `id` smallint NOT NULL auto_increment,
   `folio` varchar(45) not null,
-  `fecha` varchar(45) not null,
+  `fecha` datetime not null,
   `encuestador` varchar(48) not null,
   `empleado` smallint unsigned not null,
   `q1` tinyint(1) unsigned not null,
-  `q2` text DEFAULT NULL,
+  `q2` varchar(9) DEFAULT NULL,
+  `q2_10` text default null,		
   `q3` DATE NOT NULL,
-  `q4` TEXT NOT NULL,
-  `q5` tinyint(1) unsigned,
+  `q4` Tinyint default NULL,
+  `q4_12` text default null
   `ineFront` MEDIUMTEXT,
   `ineBack` MEDIUMTEXT,
   `empleadoFoto` MEDIUMTEXT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `testigos` (
+	`id` smallint not null auto_increment,
+	`id_empleado` smallint not null,
+	`fecha` datetime not null,
+	`q1` tinyint(1) default null,
+	`q2` tinyint default null,
+	`q3` tinyint default null,
+	`q4` date default null,
+	PRIMARY KEY(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
