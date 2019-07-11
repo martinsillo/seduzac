@@ -1,7 +1,7 @@
 <h4>Cuestionario</h4>
 
 <input type='hidden' id="idEmpleado" value="<?php echo $_GET['id']; ?>">
-<p>1. Su clave de trabajo corresponde con la funcion que realiza?</p>
+<p>1. Su clave de trabajo corresponde con la función que realiza?</p>
  <div class="switch">
     <label>
     No
@@ -80,7 +80,7 @@
 <hr>
 <div class="row">
         <div class="col s12">
-          3. ¿En que fecha comenzó usted, por primera vez a trabajar en la Secretaria de Eduación?: 
+          3. ¿En que fecha comenzó usted, por primera vez a trabajar en la Secretaría de Eduación?: 
           <div class="input-field inline">
             <input  type="date" class="validate" id='q3'>
           </div>
@@ -173,7 +173,7 @@
 	</div>	
 </div>
 <hr>
-5. ¿Me permite tomar una fotografía a su IFE para nuestros archivos? El manejo será confidencial y para fines exclusivamente institucionales de la SEZ.
+5. ¿Me permite tomar una fotografía a su INE/IFE para nuestros archivos? El manejo será confidencial y para fines exclusivamente institucionales de la SEZ.
   <div class="switch">
     <label>
     No
@@ -349,11 +349,6 @@ function capturarTrabajador(){
     
 }    
     
-    
-    
-    
-    
-
 
 function generarFoto(v){
     

@@ -1,4 +1,4 @@
-DROP SCHEMA `encuestas_seduzac`;
+DROP SCHEMA  IF EXISTS `encuestas_seduzac`;
 CREATE SCHEMA `encuestas_seduzac` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `encuestas_seduzac`;
 
@@ -53,10 +53,11 @@ CREATE TABLE `encuestas` (
   `fecha` datetime NOT NULL,
   `encuestador` varchar(48) COLLATE utf8_unicode_ci NOT NULL,
   `empleado` smallint(5) unsigned NOT NULL,
-  `q1` tinyint(1) unsigned NOT NULL,
+    `accede_encuesta` tinyint(1) NOT NULL,
+  `q1` tinyint(1) unsigned DEFAULT NULL,
   `q2` varchar(9) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `q2_10` text COLLATE utf8_unicode_ci NOT NULL,
-  `q3` date NOT NULL,
+  `q2_10` text COLLATE utf8_unicode_ci,
+  `q3` date DEFAULT NULL,
   `q4` tinyint(3) unsigned DEFAULT NULL,
   `q4_12` text COLLATE utf8_unicode_ci,
   `ineFront` mediumtext COLLATE utf8_unicode_ci,

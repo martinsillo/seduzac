@@ -91,7 +91,7 @@ $conn = new mysqli(HOST, 'seduzac_con', 'F2AE9469B26199657C279E55B1747',DATABASE
   <footer class="page-footer white">
     <div class="footer-copyright">
       <div class="container">
-      Powered by <a class="orange-text text-lighten-3" href="https://cozcyt.gob.mx/labsol/"><img src="img/logo_labsol.png"></a>
+      <span style="color:#333;">Powered by </span> <a class="orange-text text-lighten-3" href="https://cozcyt.gob.mx/labsol/"><img src="img/logo_labsol.png"></a> &nbsp;|&nbsp; <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" > <img src="img/gpl3_logo.png" width="80"></a>
       </div>
     </div>
   </footer>

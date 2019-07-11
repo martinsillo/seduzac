@@ -1,6 +1,6 @@
 -- creacion de usuario
-CREATE USER 'seduzac_con'@'localhost' IDENTIFIED BY 'F2AE9469B26199657C279E55B1747';
-CREATE USER 'seduzac_reg'@'localhost' IDENTIFIED BY '3C4F3B8B214AF57424728AEE374CD';
+-- CREATE USER 'seduzac_con'@'localhost' IDENTIFIED BY 'F2AE9469B26199657C279E55B1747';
+-- CREATE USER 'seduzac_reg'@'localhost' IDENTIFIED BY '3C4F3B8B214AF57424728AEE374CD';
 
 -- permisos de los usuarios
 
