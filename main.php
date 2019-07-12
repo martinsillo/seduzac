@@ -41,7 +41,7 @@ $conn = new mysqli(HOST, 'seduzac_con', 'F2AE9469B26199657C279E55B1747',DATABASE
           <label for="autocomplete-cct">Escuela</label>
   </div>    
 </div>
-<a href="javascript:agregarEmpleado" class="btn btn-success btn-small"> Agregar Empleado</a><br><br>
+<a href="javascript:agregarEmpleado();" class="btn btn-success btn-small"> Agregar Empleado</a><br><br>
 <hr>			  
 <div id="listaPersonal">
 <table class="highlight" id="recordsPersonal">
@@ -120,6 +120,6 @@ $(document).ready(function(){
      
      	
 </script>	
- <script type="application/javascript" src="js/main.js?v2.1.4"></script>    
+ <script type="application/javascript" src="js/main.js?v2.2.2"></script>    
   </body>
 </html>

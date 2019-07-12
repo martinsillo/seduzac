@@ -83,17 +83,19 @@ function evaluar(accion,id) {
 
 function agregarEmpleado() {
 	'use strict';
+    if( $('#autocomplete-cct').val() == "" ){
+        alert("Primero seleccione un CCT");
+    }else{
+        
+         $('#contenidoModal').load('views/nuevo_empleado.php');
+	 document.getElementById('footerModal').innerHTML="<a href='javascript:guardarEmpleado()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>";
+     $('#modal1').modal('open');
+        
+        
+    }
 	return false;
 }
 
-/* ------------ fotografias ------------------- */
-
-/*
-    Tomar una fotografía y guardarla en un archivo
-    @date 2017-11-22
-    @author parzibyte
-    @web parzibyte.me/blog
-*/
 function tieneSoporteUserMedia() {
     return !!(navigator.getUserMedia || (navigator.mozGetUserMedia || navigator.mediaDevices.getUserMedia) || navigator.webkitGetUserMedia || navigator.msGetUserMedia)
 }
@@ -101,7 +103,6 @@ function tieneSoporteUserMedia() {
 function _getUserMedia() {
     return (navigator.getUserMedia || (navigator.mozGetUserMedia || navigator.mediaDevices.getUserMedia) || navigator.webkitGetUserMedia || navigator.msGetUserMedia).apply(navigator, arguments);
 }
-
 
 function guardarEvaluacion(){
     
