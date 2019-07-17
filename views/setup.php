@@ -3,7 +3,7 @@ session_start();
 $_SESSION['instalar'] = "si";
 ?>
 <h5>Instalación</h5>
-El sistema aún no se ha inicializado, por favor llena los siguientes campos par continuar, <span style="color:red;"><strong>el usuario aqui registrado, será el usuario principal en este dispositivo</strong></span>.
+El sistema aún no se ha inicializado, por favor llena los siguientes campos para continuar, <span style="color:red;"><strong>el usuario aqui registrado, será el usuario principal en este dispositivo</strong></span>.
 <br>
 <form onsubmit="return instalar();">
 <div class="row">
