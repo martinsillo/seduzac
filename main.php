@@ -38,7 +38,7 @@ $conn = new mysqli(HOST, 'seduzac_con', 'F2AE9469B26199657C279E55B1747',DATABASE
   </div>
 <div class="input-field col s8">
  <input type="text" disabled id="nomEscuela" value="-Seleccione CCT-">
-          <label for="autocomplete-cct">Escuela</label>
+          <label for="nomEscuela">Escuela</label>
   </div>    
 </div>
 <div id="listaPersonal">

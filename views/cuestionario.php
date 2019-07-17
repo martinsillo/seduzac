@@ -70,10 +70,7 @@
                 <span>Rampas</span>
             </label>
 		</p>
-          <p>
-            <input  type="email" class="validate" name="q2_10" id='q2_10'>
-            <label for="q2_10">Otro</label>  
-          </p>
+        S
         
     </div>
 </div>
