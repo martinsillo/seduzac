@@ -89,7 +89,7 @@ function agregarEmpleado() {
     } else {
 
         $('#contenidoModal').load('views/nuevo_empleado.php');
-        document.getElementById('footerModal').innerHTML = "<a href='javascript:enviarFormEmpleado()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>";
+        document.getElementById('footerModal').innerHTML = "<a href='javascript:enviarFormEmpleado()' class='waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>";
         $('#modal1').modal('open');
 
 
@@ -188,7 +188,11 @@ function enLinea(){
 
 
 function enviarFormEmpleado(){
-    console.log("enviado");
-    document.getElementById('nvoEmpleadoForm').submit();
-       console.log("enviado 2");
+    $('#nvoEmpleadoForm').submit();
+}
+
+function guardaNvoEmpleado() {
+  
+    
+    return false;
 }

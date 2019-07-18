@@ -22,8 +22,8 @@ require_once('../scripts/constantes.php');
         </div>
         <div class="row">
             <div class="input-field col s8">
-                <input id="first_name" type="text" class="validate" required>
-                <label for="first_name">Nombre</label>
+                <input id="nombre" type="text" class="validate" >
+                <label for="nombre">Nombre</label>
             </div>
         </div>
         <div class="row">
@@ -108,8 +108,5 @@ $(document).ready(function(){
     });
     
   });
-function guardaNvoEmpleado() {
-    console.log("enviada la info");
-    return false;
-}
+
 </script>
