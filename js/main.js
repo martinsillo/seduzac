@@ -6,7 +6,6 @@ $(document).ready(function() {
     enLinea();
 });
 
-
 function cargaInfoCCT() {
     'use strict';
     var x, obj, row, cel1, cel2, cel3, cel4, cel5, cel6, cel7, encuestado, evaluarbtn;
@@ -19,7 +18,7 @@ function cargaInfoCCT() {
             }
         })
         .done(function(msg) {
-            console.log(msg);
+            
             if (msg != '') {
                 obj = jQuery.parseJSON(msg);
                 $('#nomEscuela').val(obj[1]);
@@ -89,7 +88,7 @@ function agregarEmpleado() {
     } else {
 
         $('#contenidoModal').load('views/nuevo_empleado.php');
-        document.getElementById('footerModal').innerHTML = "<a href='javascript:enviarFormEmpleado()' class='waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>";
+        document.getElementById('footerModal').innerHTML = "<a href='javascript:guardaNvoEmpleado()' class='waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>";
         $('#modal1').modal('open');
 
 
@@ -186,13 +185,70 @@ function enLinea(){
 }
 
 
-
-function enviarFormEmpleado(){
-    $('#nvoEmpleadoForm').submit();
-}
-
 function guardaNvoEmpleado() {
-  
-    
-    return false;
+	if($('#nombre_nuevo').val().length < 8){
+		alert('El campo de nombre no es correcto');
+		$('#nombre_nuevo').focus();
+		return false;
+	}
+	
+	if($('#rfc_n').val().length < 10){
+		alert('El campo de rfc no es correcto');
+		$('#rfc_n').focus();
+		return false;
+	}
+	
+	if($('#cve_fed_n').val().length < 4){
+		alert('El campo de clave federal no es correcto');
+		$('#cve_fed_n').focus();
+		return false;
+	}
+	
+	
+	if($('#num_empleado_n').val().length < 4){
+		alert('El campo de numero de empleado no es correcto');
+		$('#num_empleado_n').focus();
+		return false;
+	}
+	
+	if($('#puesto_n').val().length < 1){
+		alert('El campo de puesto no es correcto');
+		$('#puesto_n').focus();
+		return false;
+	}
+	
+	if($('#categoria_n').val().length < 1){
+		alert('El campo de categoria no es correcto');
+		$('#categoria_n').focus();
+		return false;
+	}
+	
+	if($('#contrato_n').val().length < 1){
+		alert('El campo de contrato no es correcto');
+		$('#contrato_n').focus();
+		return false;
+	}
+	
+	$.ajax({
+            method: "POST",
+            url: "scripts/nuevoEmpleado.php",
+            data: {
+                rfc: $('#rfc_n').val(),
+				num_empleado: $('#num_empleado_n').val(),
+				nombre: $('#nombre_nuevo').val(),
+				puesto: $('#puesto_n').val(),
+				tipo_contrato: $('#contrato_n').val(),
+				categoria: $('#categoria_n').val(),
+				cve_fed: $('#cve_fed_n').val(),
+				cct: $('#cct_nuevo').val()
+            }
+        })
+        .done(function(msg) {
+		   cargaInfoCCT();
+		   alert(msg);
+	      $('#modal1').modal('close');
+	});
+	
+	
+	
 }

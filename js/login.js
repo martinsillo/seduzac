@@ -1,14 +1,12 @@
 // login
 function login() {
     'use strict';
-	console.log("called");
      $.ajax({
 		method: "POST",
 		url: "scripts/login.php",
 		data: {
             usuario: $('#usuario').val(),
             clave: $('#clave').val()
-			
 		}
 	})
 		.done(function (msg) {

@@ -11,7 +11,7 @@ require_once('../scripts/constantes.php');
 <h5> Agregar Nuevo Empleado </h5>
 <hr>
 <div class="row">
-    <form class="col s12" onsubmit="return guardaNvoEmpleado();" id="nvoEmpleadoForm">
+    <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <input id="cct_nuevo" name="cct_nuevo" type="text" class="validate" disabled>
@@ -22,8 +22,8 @@ require_once('../scripts/constantes.php');
         </div>
         <div class="row">
             <div class="input-field col s8">
-                <input id="nombre" type="text" class="validate" >
-                <label for="nombre">Nombre</label>
+                <input id="nombre_nuevo" name="nombre_nuevo"type="text" class="validate" >
+                <label for="nombre_nuevo">Nombre</label>
             </div>
         </div>
         <div class="row">
@@ -44,11 +44,11 @@ require_once('../scripts/constantes.php');
          <div class="row">
             <div class="input-field col s4">
                 <input id="puesto_n" name="puesto_n" class="autocomplete-puesto"  type="text" required>
-                <label for="rfc_n">Puesto</label>
+                <label for="puesto_n">Puesto</label>
             </div>
             <div class="input-field col s4">
                 <input id="categoria_n" name="categoria_n" type="text" class="autocomplete-categoria" required>
-                <label for="cve_fed_n" name="cve_fed_n">Categoría</label>
+                <label for="categoria_n">Categoría</label>
             </div>
             <div class="input-field col s4">
                 <input id="contrato_n" name = "contrato_n" type="text"  class="autocomplete-contrato" required>

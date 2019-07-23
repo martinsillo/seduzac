@@ -11,4 +11,5 @@ GRANT EXECUTE ON PROCEDURE encuestas_seduzac.instalacion TO 'seduzac_reg'@'local
 GRANT EXECUTE ON PROCEDURE encuestas_seduzac.login TO 'seduzac_con'@'localhost';
 GRANT EXECUTE ON PROCEDURE encuestas_seduzac.infoConfig TO 'seduzac_con'@'localhost';
 GRANT EXECUTE ON PROCEDURE encuestas_seduzac.listaEmpleados TO 'seduzac_con'@'localhost';
+GRANT EXECUTE ON PROCEDURE encuestas_seduzac.nvoEmpleado TO 'seduzac_reg'@'localhost';
 FLUSH PRIVILEGES;

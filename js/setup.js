@@ -36,11 +36,7 @@ function checar() {
 }
 
 function instalar(){
-	
     'use strict';
-	
-	console.log("loading Instalar");
-	
     if($('#clave').val() != $('#clave2').val()){
         alert("Las contraseñas no coinciden");
         $('#clave').focus();
@@ -62,7 +58,6 @@ function instalar(){
 		}
 	})
 		.done(function (msg) {
-		 console.log(msg);
          var obj = jQuery.parseJSON(msg);
          alert( obj[1] );
          if(obj[0] == 1){ location.reload(); }

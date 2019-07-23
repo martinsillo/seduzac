@@ -1,11 +1,8 @@
 <?php
-
-ini_set('display_errors',0);
 session_start();
 unset($_SESSION);
 session_destroy();
 require_once('scripts/constantes.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,10 +46,10 @@ require_once('scripts/constantes.php');
   <script src="js/materialize.js"></script>
 	<?php
 	if($setup){
-		?><script src="js/setup.js"></script> 
+		?><script src="js/setup.js?v=<?php echo VERSIONPRODUCTO; ?>"></script> 
 	<?php
 	}else{
-	  ?><script src="js/login.js"></script> 	
+	  ?><script src="js/login.js?v=<?php echo VERSIONPRODUCTO; ?>"></script> 	
  <?php	} ?>
   </body>
 </html>

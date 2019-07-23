@@ -117,8 +117,6 @@ $(document).ready(function(){
       },
     });
   });
-     
-     	
 </script>	
  <script type="application/javascript" src="js/main.js?v=<?php echo VERSIONPRODUCTO; ?>"></script>    
   </body>
