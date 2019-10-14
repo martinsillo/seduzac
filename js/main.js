@@ -184,7 +184,6 @@ function enLinea(){
     }
 }
 
-
 function guardaNvoEmpleado() {
 	if($('#nombre_nuevo').val().length < 8){
 		alert('El campo de nombre no es correcto');
@@ -250,5 +249,9 @@ function guardaNvoEmpleado() {
 	});
 	
 	
+	
+}
+
+funciton noEvaluado(id){
 	
 }
