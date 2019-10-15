@@ -56,19 +56,19 @@ function evaluar(accion, id) {
     'use strict';
     if (accion == "q") {
         $('#contenidoModal').load('views/presentacion.php?id=' + id);
-        document.getElementById('footerModal').innerHTML = "<a href='javascript:evaluar(\"s\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>Si</a><a href='javascript:evaluar(\"n\")' class='modal-close waves-effect waves-green btn-flat'>No</a>";
+        document.getElementById('footerModal').innerHTML = "<a href='javascript:evaluar(\"s\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>Si</a><a href='javascript:evaluar(\"n\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>No</a>";
         $('#modal1').modal('open');
     }
 
     if (accion == "n") {
         $('#contenidoModal').load('views/no_encuesta.php?id=' + id);
-        document.getElementById('footerModal').innerHTML = "<a href='javascript:evaluar(\"s\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>Continuar Evaluación</a><a href='\"nn\"' class='modal-close waves-effect waves-green btn-flat' style='color:red;'>Guardar No evaluado</a>";
+        document.getElementById('footerModal').innerHTML = "<a href='javascript:evaluar(\"s\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>Continuar Evaluación</a><a href='javascript:guardarEvaluacion(\"no\"," + id + ");' class='modal-close waves-effect waves-green btn-flat' style='color:red;'>Guardar No evaluado</a>";
         $('#modal1').modal('open');
     }
 
     if (accion == "s") {
         $('#contenidoModal').load('views/cuestionario.php?id=' + id);
-        document.getElementById('footerModal').innerHTML = "<a href='javascript:guardarEvaluacion()' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat ' style='color:red;'>Cancelar</a>";
+        document.getElementById('footerModal').innerHTML = "<a href='javascript:guardarEvaluacion(\"si\"," + id + ")' class='modal-close waves-effect waves-green btn-flat'>Guardar</a><a href='#' class='modal-close waves-effect waves-green btn-flat ' style='color:red;'>Cancelar</a>";
         $('#modal1').modal('open');
     }
 
@@ -104,10 +104,11 @@ function _getUserMedia() {
     return (navigator.getUserMedia || (navigator.mozGetUserMedia || navigator.mediaDevices.getUserMedia) || navigator.webkitGetUserMedia || navigator.msGetUserMedia).apply(navigator, arguments);
 }
 
-function guardarEvaluacion() {
+function guardarEvaluacion(tipo,id) {
+    
 
+    
     //revisamos los campos
-
     if ($('#q1').prop('checked')) {
         var q1 = 1;
     } else {
@@ -149,27 +150,47 @@ function guardarEvaluacion() {
     var q4 = $('input:radio[name=q4]:checked').val(); // todos mismo nombre, diferente id y valor
     var q4_12 = $('#q4_12').val();
 
-
+    if(tipo == "no"){
+        var ineFrontFoto = '-',
+        ineBackFoto = '-',
+        empleadoFoto = '-';
+    }else{
+            var   ineFrontFoto = fotos[0],
+                ineBackFoto = fotos[1],
+                empleadoFoto = fotos[2];
+    }
+    
+    if(tipo == 'no'){
+        respuesta = $('input[name=group1]:checked','#noEncuesta').val();
+    }else{
+        respuesta = 'null';
+    }
+    
     $.ajax({
             method: "POST",
             url: "scripts/guardarEvaluacion.php",
             data: {
-                entrevistado: 'si',
-                idEmpleado: $('#idEmpleado').val(),
+                entrevistado: tipo,
+                idEmpleado: id,
                 q1: q1,
                 q2: q2,
                 q2_10: q2_10,
                 q3: q3,
                 q4: q4,
                 q4_12: q4_12,
-                ineFront: fotos[0],
-                ineBack: fotos[1],
-                empleadoFoto: fotos[2]
+                ineFront: ineFrontFoto,
+                ineBack: ineBackFoto,
+                empleadoFoto: empleadoFoto,
+                respuesta:respuesta
             }
         })
         .done(function(msg) {
             alert(msg);
-            cargaInfoCCT();
+           if(tipo == "si"){
+               location.reload();
+           }else{
+            cargaInfoCCT();   
+           }
         });
 
 
@@ -249,9 +270,5 @@ function guardaNvoEmpleado() {
 	});
 	
 	
-	
-}
-
-funciton noEvaluado(id){
 	
 }

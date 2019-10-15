@@ -41,13 +41,14 @@ CREATE TABLE `empleados` (
   `cct` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `encuestas` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `folio` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL,
   `encuestador` varchar(48) COLLATE utf8_unicode_ci NOT NULL,
   `empleado` smallint(5) unsigned NOT NULL,
-    `accede_encuesta` tinyint(1) NOT NULL,
+  `accede_encuesta` tinyint(1) NOT NULL,
   `q1` tinyint(1) unsigned DEFAULT NULL,
   `q2` varchar(9) COLLATE utf8_unicode_ci DEFAULT NULL,
   `q2_10` text COLLATE utf8_unicode_ci,
@@ -57,9 +58,11 @@ CREATE TABLE `encuestas` (
   `ineFront` mediumtext COLLATE utf8_unicode_ci,
   `ineBack` mediumtext COLLATE utf8_unicode_ci,
   `empleadoFoto` mediumtext COLLATE utf8_unicode_ci,
-  `sincronizado` tinyint(1) NOT NULL DEFAULT '0',
+  `no_respuesta` tinyint(1),    
+  `sincronizado` tinyint(1),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `puestos` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `puesto` varchar(64) COLLATE utf8_unicode_ci NOT NULL,

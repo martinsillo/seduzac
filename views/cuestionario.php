@@ -76,7 +76,7 @@ Si
 <div class="col s12">
 3. ¿En que fecha comenzó usted, por primera vez a trabajar en la Secretaría de Eduación?: 
 <div class="input-field inline">
-<inputtype="date" class="validate" id='q3'>
+<input type="date" class="validate" id='q3'>
 </div>
 </div>
 </div>

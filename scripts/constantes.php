@@ -1,5 +1,5 @@
 <?php
 DEFINE("HOST",'localhost');
 DEFINE("DATABASE",'encuestas_seduzac');
-DEFINE("VERSIONPRODUCTO",'2.1.9');
+DEFINE("VERSIONPRODUCTO",'2.2.4');
 DEFINE("ACTUALIZACION",0);
